@@ -39,8 +39,9 @@ public class PlayerMovemente : MonoBehaviour
         {
             Animador.SetBool("Walking", false);
         }
+        if (Input.GetKeyDown(KeyCode.J))
         {
-
+            Animador.SetTrigger("Ataque");
         }
     }
     void FixedUpdate()
