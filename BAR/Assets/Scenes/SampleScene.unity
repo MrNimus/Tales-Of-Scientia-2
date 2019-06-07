@@ -865,7 +865,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.0054918528, y: -0.6205807}
+  m_Offset: {x: 0.03678918, y: -0.4953911}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -876,7 +876,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.6372411, y: 0.69633865}
+  m_Size: {x: 1.3675151, y: 1.8230472}
   m_EdgeRadius: 0
 --- !u!1 &1063716913
 GameObject:
@@ -1355,12 +1355,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5505087164281195063, guid: 927e34f1f114513418b0b9662d0fa30f,
+    - target: {fileID: 480102532571994444, guid: 927e34f1f114513418b0b9662d0fa30f,
         type: 3}
       propertyPath: m_Layer
       value: 4
       objectReference: {fileID: 0}
-    - target: {fileID: 480102532571994444, guid: 927e34f1f114513418b0b9662d0fa30f,
+    - target: {fileID: 4340036108650111237, guid: 927e34f1f114513418b0b9662d0fa30f,
+        type: 3}
+      propertyPath: m_SortingLayerID
+      value: 2025032843
+      objectReference: {fileID: 0}
+    - target: {fileID: 4340036108650111237, guid: 927e34f1f114513418b0b9662d0fa30f,
+        type: 3}
+      propertyPath: m_SortingLayer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5505087164281195063, guid: 927e34f1f114513418b0b9662d0fa30f,
         type: 3}
       propertyPath: m_Layer
       value: 4
@@ -1435,12 +1445,12 @@ PrefabInstance:
       propertyPath: m_SortingLayer
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 4340036108650111237, guid: 927e34f1f114513418b0b9662d0fa30f,
+    - target: {fileID: 1209757646062679900, guid: 927e34f1f114513418b0b9662d0fa30f,
         type: 3}
       propertyPath: m_SortingLayerID
       value: 2025032843
       objectReference: {fileID: 0}
-    - target: {fileID: 4340036108650111237, guid: 927e34f1f114513418b0b9662d0fa30f,
+    - target: {fileID: 1209757646062679900, guid: 927e34f1f114513418b0b9662d0fa30f,
         type: 3}
       propertyPath: m_SortingLayer
       value: 2
