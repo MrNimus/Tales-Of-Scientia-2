@@ -42,6 +42,7 @@ public class PlayerMovemente : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.J))
         {
             Animador.SetTrigger("Ataque");
+            Animador.SetBool("Desenvainada", true);
         }
     }
     void FixedUpdate()

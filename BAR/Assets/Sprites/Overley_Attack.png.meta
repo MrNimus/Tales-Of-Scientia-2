@@ -1,7 +1,31 @@
 fileFormatVersion: 2
 guid: da9539cd5c0c2354b92a8dfd20628631
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: Overley_Attack_0
+    21300002: Overley_Attack_1
+    21300004: Overley_Attack_2
+    21300006: Overley_Attack_3
+    21300008: Overley_Attack_4
+    21300010: Overley_Attack_5
+    21300012: Overley_Attack_6
+    21300014: Overley_Attack_7
+    21300016: Overley_Attack_8
+    21300018: Overley_Attack_9
+    21300020: Overley_Attack_10
+    21300022: Overley_Attack_11
+    21300024: Overley_Attack_12
+    21300026: Overley_Attack_13
+    21300028: Overley_Attack_14
+    21300030: Overley_Attack_15
+    21300032: Overley_Attack_16
+    21300034: Overley_Attack_17
+    21300036: Overley_Attack_18
+    21300038: Overley_Attack_19
+    21300040: Overley_Attack_20
+    21300042: Overley_Attack_21
+    21300044: Overley_Attack_22
+    21300046: Overley_Attack_23
   externalObjects: {}
   serializedVersion: 9
   mipmaps:
@@ -45,7 +69,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -82,7 +106,487 @@ TextureImporter:
     androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Overley_Attack_0
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 352
+        width: 31
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e0dbd483cd210a4a9620723871a96a1
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Overley_Attack_1
+      rect:
+        serializedVersion: 2
+        x: 275
+        y: 351
+        width: 26
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db63f4ac0a44fc2439d34a503e2b1cf3
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Overley_Attack_2
+      rect:
+        serializedVersion: 2
+        x: 455
+        y: 351
+        width: 38
+        height: 48
+      alignment: 9
+      pivot: {x: 0.6331522, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03bd9552a49ceb74d8e4a561e9f96467
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Overley_Attack_3
+      rect:
+        serializedVersion: 2
+        x: 659
+        y: 351
+        width: 27
+        height: 49
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b21ea9d58548a5a48a1713381565eddc
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Overley_Attack_4
+      rect:
+        serializedVersion: 2
+        x: 850
+        y: 351
+        width: 45
+        height: 49
+      alignment: 9
+      pivot: {x: 0.35689563, y: 0.50625795}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c46e1bfe1eeb7044b8d0d0b9df5968e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Overley_Attack_5
+      rect:
+        serializedVersion: 2
+        x: 1042
+        y: 351
+        width: 62
+        height: 49
+      alignment: 9
+      pivot: {x: 0.26259097, y: 0.50938755}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4635929cbebb4d242bcacf2a4789fdc8
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Overley_Attack_6
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 243
+        width: 34
+        height: 49
+      alignment: 9
+      pivot: {x: 0.67587394, y: 0.51564556}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5161ce1afba0f640afe04fe0e60cdca
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Overley_Attack_7
+      rect:
+        serializedVersion: 2
+        x: 270
+        y: 243
+        width: 25
+        height: 47
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a0616a5dff17f5b4c923e355d4e37781
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Overley_Attack_8
+      rect:
+        serializedVersion: 2
+        x: 464
+        y: 243
+        width: 25
+        height: 49
+      alignment: 9
+      pivot: {x: 0.4509363, y: 0.51251656}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65eebaaa3106690459eb827855ca58d2
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Overley_Attack_9
+      rect:
+        serializedVersion: 2
+        x: 647
+        y: 243
+        width: 35
+        height: 49
+      alignment: 9
+      pivot: {x: 0.5788539, y: 0.51251656}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5bd153019168b28429d951d29fd1e598
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Overley_Attack_10
+      rect:
+        serializedVersion: 2
+        x: 820
+        y: 243
+        width: 53
+        height: 49
+      alignment: 9
+      pivot: {x: 0.7140791, y: 0.5219035}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f13378ca201e483469bbd272728e5ff6
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Overley_Attack_11
+      rect:
+        serializedVersion: 2
+        x: 1009
+        y: 243
+        width: 56
+        height: 49
+      alignment: 9
+      pivot: {x: 0.713562, y: 0.51564556}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9410c6f21c16e024f9035658c9eb8041
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Overley_Attack_12
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 135
+        width: 32
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 046e89027c91c664fb43e6da98272bd6
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Overley_Attack_13
+      rect:
+        serializedVersion: 2
+        x: 254
+        y: 135
+        width: 36
+        height: 50
+      alignment: 9
+      pivot: {x: 0.6275016, y: 0.5000003}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f72d3ac5d49e2642b1deece69936b33
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Overley_Attack_14
+      rect:
+        serializedVersion: 2
+        x: 444
+        y: 135
+        width: 38
+        height: 48
+      alignment: 9
+      pivot: {x: 0.613686, y: 0.5000003}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff56212a4505b6a44a9400afc7cf9450
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Overley_Attack_15
+      rect:
+        serializedVersion: 2
+        x: 643
+        y: 135
+        width: 32
+        height: 49
+      alignment: 9
+      pivot: {x: 0.6181278, y: 0.5000003}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03c6d9ff2aa95054092a3dc320ab16a7
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Overley_Attack_16
+      rect:
+        serializedVersion: 2
+        x: 841
+        y: 129
+        width: 44
+        height: 56
+      alignment: 9
+      pivot: {x: 0.3404541, y: 0.5626796}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8467809467b71424d9e0735dc3144343
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Overley_Attack_17
+      rect:
+        serializedVersion: 2
+        x: 1032
+        y: 135
+        width: 62
+        height: 50
+      alignment: 9
+      pivot: {x: 0.26048228, y: 0.5054004}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 997df6770a629f3478d8381f2c4ea935
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Overley_Attack_18
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 44
+        width: 34
+        height: 49
+      alignment: 9
+      pivot: {x: 0.33452517, y: 0.52325034}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac3d1af8d02619944b2064bb38e97579
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Overley_Attack_19
+      rect:
+        serializedVersion: 2
+        x: 268
+        y: 44
+        width: 25
+        height: 47
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8e18ab2bb93cae4f95631908a187a28
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Overley_Attack_20
+      rect:
+        serializedVersion: 2
+        x: 458
+        y: 44
+        width: 25
+        height: 49
+      alignment: 9
+      pivot: {x: 0.5658533, y: 0.50671965}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4be5e9eaa13460478a7a6a1ac756657
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Overley_Attack_21
+      rect:
+        serializedVersion: 2
+        x: 649
+        y: 44
+        width: 35
+        height: 49
+      alignment: 9
+      pivot: {x: 0.459232, y: 0.51567936}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12f0f19aeb50eb74aaa520c957f7104b
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Overley_Attack_22
+      rect:
+        serializedVersion: 2
+        x: 842
+        y: 44
+        width: 53
+        height: 49
+      alignment: 9
+      pivot: {x: 0.3009874, y: 0.5198009}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f5faba05d4b0e241a4545e3c77d1598
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Overley_Attack_23
+      rect:
+        serializedVersion: 2
+        x: 1034
+        y: 44
+        width: 56
+        height: 49
+      alignment: 9
+      pivot: {x: 0.28573826, y: 0.5208315}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd28cc8cc134dc344acb81a4ad2edbda
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
