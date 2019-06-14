@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Assertions;
 
+
 public class PlayerMovemente : MonoBehaviour
 {
+    
     public float Speed = 4f;
     Animator Animador;
     Rigidbody2D RB2D;
@@ -43,6 +45,10 @@ public class PlayerMovemente : MonoBehaviour
         {
             Animador.SetTrigger("Ataque");
             Animador.SetBool("Desenvainada", true);
+        }
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            Animador.SetBool("Desenvainada", false);
         }
     }
     void FixedUpdate()
