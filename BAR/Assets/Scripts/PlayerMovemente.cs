@@ -12,6 +12,7 @@ public class PlayerMovemente : MonoBehaviour
     Rigidbody2D RB2D;
     Vector2 Movimiento;
     public GameObject MapaInicial;
+    
     void Awake()
     {
         Assert.IsNotNull(MapaInicial);
@@ -41,11 +42,20 @@ public class PlayerMovemente : MonoBehaviour
         {
             Animador.SetBool("Walking", false);
         }
-        if (Input.GetKeyDown(KeyCode.J))
-        {
+             
+           if (Input.GetAxis("Fire1") == 1) 
+         {
+
             Animador.SetTrigger("Ataque");
             Animador.SetBool("Desenvainada", true);
         }
+        else if (Input.GetAxis("Fire1") == -1)
+        {
+            Animador.SetBool("Desenvainada", false);
+        }
+
+      
+
         if (Input.GetKeyDown(KeyCode.R))
         {
             Animador.SetBool("Desenvainada", false);
