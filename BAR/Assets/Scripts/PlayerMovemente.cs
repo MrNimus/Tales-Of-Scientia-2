@@ -12,7 +12,7 @@ public class PlayerMovemente : MonoBehaviour
     Rigidbody2D RB2D;
     Vector2 Movimiento;
     public GameObject MapaInicial;
-    
+    CircleCollider2D AttackCollider;
     void Awake()
     {
         Assert.IsNotNull(MapaInicial);
@@ -23,6 +23,8 @@ public class PlayerMovemente : MonoBehaviour
         Animador = GetComponent<Animator>();
         RB2D = GetComponent<Rigidbody2D>();
         Camera.main.GetComponent<MainCámera>().SetBound(MapaInicial);
+        AttackCollider = transform.GetChild(0).GetComponent<CircleCollider2D>();
+        AttackCollider.enabled = false; 
        
     }
 
@@ -42,8 +44,11 @@ public class PlayerMovemente : MonoBehaviour
         {
             Animador.SetBool("Walking", false);
         }
-             
-           if (Input.GetAxis("Fire1") == 1) 
+        AnimatorStateInfo stateInfo = Animador.GetCurrentAnimatorStateInfo(0);
+        bool attacking = stateInfo.IsName("Player Attack");
+
+
+           if (Input.GetAxis("Fire1") == 1 && !attacking) 
          {
 
             Animador.SetTrigger("Ataque");
@@ -59,6 +64,22 @@ public class PlayerMovemente : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.R))
         {
             Animador.SetBool("Desenvainada", false);
+        }
+        if (Movimiento !=Vector2.zero)
+        {
+            AttackCollider.offset = new Vector2(Movimiento.y, (Movimiento.x / 3)*-1);
+        }
+        if (attacking)
+        {
+            float playbacktime = stateInfo.normalizedTime;
+            if (playbacktime > 0.089 && playbacktime < 0.178)
+            {
+                AttackCollider.enabled = true;
+            }
+            else
+            {
+                AttackCollider.enabled = false;
+            }
         }
     }
     void FixedUpdate()
