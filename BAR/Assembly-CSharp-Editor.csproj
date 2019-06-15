@@ -337,6 +337,9 @@
     <Reference Include="UnityEditor.Purchasing">
       <HintPath>C:/Users/joseg/Documents/GitHub/Tales-Of-Scientia-2/BAR/Library/PackageCache/com.unity.purchasing@2.0.3/Editor/UnityEditor.Purchasing.dll</HintPath>
     </Reference>
+    <Reference Include="XInputDotNetPure">
+      <HintPath>C:/Users/joseg/Documents/GitHub/Tales-Of-Scientia-2/BAR/Assets/XInputDotNet/Plugins/XInputDotNetPure.dll</HintPath>
+    </Reference>
     <Reference Include="mscorlib">
       <HintPath>C:/Program Files/Unity/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/mscorlib.dll</HintPath>
     </Reference>

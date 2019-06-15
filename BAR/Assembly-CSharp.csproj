@@ -61,6 +61,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Area.cs" />
+    <Compile Include="Assets\Breakable.cs" />
+    <Compile Include="Assets\Profundidad.cs" />
     <Compile Include="Assets\Scripts\MainCámera.cs" />
     <Compile Include="Assets\Scripts\PlayerMovemente.cs" />
     <Compile Include="Assets\Scripts\Warp.cs" />
@@ -82,13 +84,16 @@
     <Compile Include="Assets\Tiled2Unity\Scripts\Runtime\TileLayer.cs" />
     <Compile Include="Assets\Tiled2Unity\Scripts\Runtime\TileObject.cs" />
     <Compile Include="Assets\Tiled2Unity\Scripts\Runtime\TmxObject.cs" />
+    <Compile Include="Assets\XInputDotNet\Examples\XInputTestCS.cs" />
     <None Include="Assets\Tiled2Unity\Shaders\shaDiffuseDepth-Instanced.shader" />
+    <None Include="Assets\XInputDotNet\Docs.txt" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface-Mobile.shader" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
     <None Include="Assets\Tiled2Unity\Shaders\shaDefault.shader" />
     <None Include="Assets\Tiled2Unity\Shaders\shaDepth-Instanced.shader" />
     <None Include="Assets\Tiled2Unity\Prefabs\_ReadMe.txt" />
     <None Include="Assets\Tiled2Unity\Shaders\Tiled2Unity.cginc" />
+    <None Include="Assets\XInputDotNet\MITLicense.txt" />
     <None Include="Assets\Tiled2Unity\Imported\BAR1.1.tiled2unity.xml" />
     <None Include="Assets\Tiled2Unity\Tiled2Unity.export.txt" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro_Properties.cginc" />
@@ -344,6 +349,9 @@
     </Reference>
     <Reference Include="Unity.Analytics.Tracker">
       <HintPath>C:/Users/joseg/Documents/GitHub/Tales-Of-Scientia-2/BAR/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Tracker.dll</HintPath>
+    </Reference>
+    <Reference Include="XInputDotNetPure">
+      <HintPath>C:/Users/joseg/Documents/GitHub/Tales-Of-Scientia-2/BAR/Assets/XInputDotNet/Plugins/XInputDotNetPure.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
       <HintPath>C:/Program Files/Unity/Editor/Data/NetStandard/ref/2.0.0/netstandard.dll</HintPath>

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Assertions;
+using XInputDotNetPure;
 
 
 public class PlayerMovemente : MonoBehaviour
@@ -12,7 +13,9 @@ public class PlayerMovemente : MonoBehaviour
     Rigidbody2D RB2D;
     Vector2 Movimiento;
     public GameObject MapaInicial;
-    CircleCollider2D AttackCollider;
+    BoxCollider2D AttackCollider;
+    public float A, D;
+    
     void Awake()
     {
         Assert.IsNotNull(MapaInicial);
@@ -23,7 +26,7 @@ public class PlayerMovemente : MonoBehaviour
         Animador = GetComponent<Animator>();
         RB2D = GetComponent<Rigidbody2D>();
         Camera.main.GetComponent<MainCámera>().SetBound(MapaInicial);
-        AttackCollider = transform.GetChild(0).GetComponent<CircleCollider2D>();
+        AttackCollider = transform.GetChild(0).GetComponent<BoxCollider2D>();
         AttackCollider.enabled = false; 
        
     }
@@ -31,6 +34,7 @@ public class PlayerMovemente : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         Movimiento = new Vector2(
             Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
 
@@ -48,17 +52,24 @@ public class PlayerMovemente : MonoBehaviour
         bool attacking = stateInfo.IsName("Player Attack");
 
 
-           if (Input.GetAxis("Fire1") == 1 && !attacking) 
+           if (Input.GetAxis("Fire1") == 1 && !attacking ) 
          {
+            StartCoroutine(Ataque());
+            IEnumerator Ataque()
+            {
+                Animador.SetTrigger("Ataque");
+                GamePad.SetVibration(PlayerIndex.One, A, D);
+                Animador.SetBool("Desenvainada", true);
+                yield return new WaitForSeconds(0.2f);
+                GamePad.SetVibration(PlayerIndex.One, 0, 0);
+            }
 
-            Animador.SetTrigger("Ataque");
-            Animador.SetBool("Desenvainada", true);
         }
         else if (Input.GetAxis("Fire1") == -1)
         {
             Animador.SetBool("Desenvainada", false);
         }
-
+        
       
 
         if (Input.GetKeyDown(KeyCode.R))
@@ -67,12 +78,12 @@ public class PlayerMovemente : MonoBehaviour
         }
         if (Movimiento !=Vector2.zero)
         {
-            AttackCollider.offset = new Vector2(Movimiento.y, (Movimiento.x / 3)*-1);
+            AttackCollider.offset = new Vector2(Movimiento.y/5, (Movimiento.x /19)*-1);
         }
         if (attacking)
         {
             float playbacktime = stateInfo.normalizedTime;
-            if (playbacktime > 0.089 && playbacktime < 0.178)
+            if (playbacktime > 0.0120 && playbacktime < 0.178)
             {
                 AttackCollider.enabled = true;
             }
@@ -80,6 +91,7 @@ public class PlayerMovemente : MonoBehaviour
             {
                 AttackCollider.enabled = false;
             }
+            
         }
     }
     void FixedUpdate()
