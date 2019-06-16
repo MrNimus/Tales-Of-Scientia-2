@@ -13,6 +13,7 @@ public class Warp : MonoBehaviour
     bool IsFadeIn = false;
     float Alpha = 0;
     float fadetime = 2f;
+  
 
     GameObject Area;
 
