@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 4968481219399103362}
   m_Layer: 0
   m_Name: Jarra
-  m_TagString: Untagged
+  m_TagString: Object
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -145,3 +145,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Destruction_Anim: DESTROY
   Time: 0.2
+  A: 100
+  D: 100

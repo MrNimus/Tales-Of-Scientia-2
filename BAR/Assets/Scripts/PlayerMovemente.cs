@@ -15,15 +15,20 @@ public class PlayerMovemente : MonoBehaviour
     public GameObject MapaInicial;
     BoxCollider2D AttackCollider;
     public float A, D;
+    public GameObject Proyectil;
+    bool NoMove;
+    
     
     void Awake()
     {
         Assert.IsNotNull(MapaInicial);
+        Assert.IsNotNull(Proyectil);
     }
     // Start is called before the first frame update
     void Start()
     {
         Animador = GetComponent<Animator>();
+        
         RB2D = GetComponent<Rigidbody2D>();
         Camera.main.GetComponent<MainCámera>().SetBound(MapaInicial);
         AttackCollider = transform.GetChild(0).GetComponent<BoxCollider2D>();
@@ -34,10 +39,23 @@ public class PlayerMovemente : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        Movimiento_Jugador();
+        Animacion_Movimiento();
+        Ataque_Principal();
+        GuardarArma();
+    }
+    void FixedUpdate()
+    {
+        RB2D.MovePosition(RB2D.position + Movimiento * Speed * Time.deltaTime);
+    }
+    void Movimiento_Jugador()
+    {
         Movimiento = new Vector2(
-            Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+                   Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
 
+    }
+    void Animacion_Movimiento()
+    {
         if (Movimiento != Vector2.zero)
         {
             Animador.SetFloat("MovimientoX", Movimiento.x);
@@ -48,17 +66,20 @@ public class PlayerMovemente : MonoBehaviour
         {
             Animador.SetBool("Walking", false);
         }
+    }
+    void Ataque_Principal()
+    {
         AnimatorStateInfo stateInfo = Animador.GetCurrentAnimatorStateInfo(0);
         bool attacking = stateInfo.IsName("Player Attack");
 
 
-           if (Input.GetAxis("Fire1") == 1 && !attacking ) 
-         {
+        if (Input.GetAxis("Fire1") == 1 && !attacking)
+        {
             StartCoroutine(Ataque());
             IEnumerator Ataque()
             {
                 Animador.SetTrigger("Ataque");
-                GamePad.SetVibration(PlayerIndex.One, A, D);
+                GamePad.SetVibration(PlayerIndex.One, 0.2f, 0.2f);
                 Animador.SetBool("Desenvainada", true);
                 yield return new WaitForSeconds(0.2f);
                 GamePad.SetVibration(PlayerIndex.One, 0, 0);
@@ -69,16 +90,9 @@ public class PlayerMovemente : MonoBehaviour
         {
             Animador.SetBool("Desenvainada", false);
         }
-        
-      
-
-        if (Input.GetKeyDown(KeyCode.R))
+        if (Movimiento != Vector2.zero)
         {
-            Animador.SetBool("Desenvainada", false);
-        }
-        if (Movimiento !=Vector2.zero)
-        {
-            AttackCollider.offset = new Vector2(Movimiento.y/5, (Movimiento.x /19)*-1);
+            AttackCollider.offset = new Vector2(Movimiento.y / 5, (Movimiento.x / 19) * -1);
         }
         if (attacking)
         {
@@ -91,12 +105,42 @@ public class PlayerMovemente : MonoBehaviour
             {
                 AttackCollider.enabled = false;
             }
-            
+
+        }
+
+    }
+    void GuardarArma()
+    {
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            Animador.SetBool("Desenvainada", false);
         }
     }
-    void FixedUpdate()
+    void NoMover()
     {
-        RB2D.MovePosition(RB2D.position + Movimiento * Speed * Time.deltaTime);
+        if (NoMove)
+        {
+            Movimiento = Vector2.zero;
+        }
     }
-     
+    void Ataque_Cargado()
+    {
+        AnimatorStateInfo animatorStateInfo = Animador.GetCurrentAnimatorStateInfo(0);
+        bool loading = animatorStateInfo.IsName("Player Attack");
+        if (Input.GetButtonDown("ChargeAttack"))
+        {
+            Animador.SetTrigger("Loading");
+            
+        }
+        else if(Input.GetButtonUp("ChargeAttack"))
+        {
+            Animador.SetTrigger("AtaqueCargado");
+            float Angulo = Mathf.Atan2(Animador.GetFloat("MovimientoY"), Animador.GetFloat("MovimientoX")) * Mathf.Rad2Deg;
+            GameObject Slashe = Instantiate(Proyectil, transform.position, Quaternion.AngleAxis(Angulo, Vector3.forward));
+            Slash slash = Slashe.GetComponent<Slash>();
+            slash.mov.x = Animador.GetFloat("MovimientoX");
+            slash.mov.y = Animador.GetFloat("MovimientoY");
+            Animador.SetTrigger("Ataque");
+        }
+    }
 }

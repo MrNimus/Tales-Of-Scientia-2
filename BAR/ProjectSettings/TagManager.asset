@@ -7,6 +7,8 @@ TagManager:
   - PlayerIndoor
   - PlayerLock
   - Area
+  - Attack
+  - Object
   layers:
   - Default
   - TransparentFX

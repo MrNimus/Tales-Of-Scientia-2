@@ -844,3 +844,7 @@ C:\Users\José Luna\Desktop\LOCAL\Tales-Of-Scientia-2\BAR\obj\Debug\Assembly-CSh
 C:\Users\José Luna\Desktop\LOCAL\Tales-Of-Scientia-2\BAR\obj\Debug\Assembly-CSharp.csproj.CopyComplete
 C:\Users\José Luna\Desktop\LOCAL\Tales-Of-Scientia-2\BAR\obj\Debug\Assembly-CSharp.dll
 C:\Users\José Luna\Desktop\LOCAL\Tales-Of-Scientia-2\BAR\obj\Debug\Assembly-CSharp.pdb
+C:\Users\joseg\Documents\GitHub\Tales-Of-Scientia-2\BAR\obj\Debug\Assembly-CSharp.csprojAssemblyReference.cache
+C:\Users\joseg\Documents\GitHub\Tales-Of-Scientia-2\BAR\obj\Debug\Assembly-CSharp.csproj.CoreCompileInputs.cache
+C:\Users\joseg\Documents\GitHub\Tales-Of-Scientia-2\BAR\obj\Debug\Assembly-CSharp.dll
+C:\Users\joseg\Documents\GitHub\Tales-Of-Scientia-2\BAR\obj\Debug\Assembly-CSharp.pdb
