@@ -43,6 +43,7 @@ public class PlayerMovemente : MonoBehaviour
         Animacion_Movimiento();
         Ataque_Principal();
         GuardarArma();
+        Ataque_Cargado();
     }
     void FixedUpdate()
     {
@@ -92,12 +93,12 @@ public class PlayerMovemente : MonoBehaviour
         }
         if (Movimiento != Vector2.zero)
         {
-            AttackCollider.offset = new Vector2(Movimiento.y / 5, (Movimiento.x / 19) * -1);
+            AttackCollider.offset = new Vector2(Movimiento.y /7, (Movimiento.x / 19) * -1);
         }
         if (attacking)
         {
             float playbacktime = stateInfo.normalizedTime;
-            if (playbacktime > 0.0120 && playbacktime < 0.178)
+           if (playbacktime > 0.0120 && playbacktime < 0.178)
             {
                 AttackCollider.enabled = true;
             }
@@ -105,6 +106,7 @@ public class PlayerMovemente : MonoBehaviour
             {
                 AttackCollider.enabled = false;
             }
+            
 
         }
 
