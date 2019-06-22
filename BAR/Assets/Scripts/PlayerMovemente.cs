@@ -17,8 +17,8 @@ public class PlayerMovemente : MonoBehaviour
     public float A, D;
     public GameObject Proyectil;
     bool NoMove;
-    bool Cargado;
-    
+  
+    Aura aura;
     
     void Awake()
     {
@@ -33,8 +33,8 @@ public class PlayerMovemente : MonoBehaviour
         RB2D = GetComponent<Rigidbody2D>();
         Camera.main.GetComponent<MainCámera>().SetBound(MapaInicial);
         AttackCollider = transform.GetChild(0).GetComponent<BoxCollider2D>();
-        AttackCollider.enabled = false; 
-       
+        AttackCollider.enabled = false;
+        aura = transform.GetChild(1).GetComponent<Aura>() ;
     }
 
     // Update is called once per frame
@@ -141,24 +141,28 @@ public class PlayerMovemente : MonoBehaviour
             if (Input.GetButton("ChargeAttack") && Input.GetButton("Fire2"))
             {
                 Animador.SetTrigger("Loading");
-                NoMove = true;
-                Cargado = true;
+                aura.StartAura();
+                NoMove = true;  
                 Animador.SetBool("Walking", false);
 
             }
-            else if (Cargado == true && Input.GetButtonUp("ChargeAttack") && !(Input.GetButtonDown("Fire2")))
+            else if (Input.GetButtonUp("ChargeAttack") && !(Input.GetButtonDown("Fire2")))
             {
                 Animador.SetTrigger("AtaqueCargado");
-                yield return new WaitForSeconds(0.5f);
-                float Angulo = Mathf.Atan2(Animador.GetFloat("MovimientoY"), Animador.GetFloat("MovimientoX")) * Mathf.Rad2Deg;
-                GameObject Slashe = Instantiate(Proyectil, transform.position, Quaternion.AngleAxis(Angulo, Vector3.forward));
-                Slash slash = Slashe.GetComponent<Slash>();
-                slash.mov.x = Animador.GetFloat("MovimientoX");
-                slash.mov.y = Animador.GetFloat("MovimientoY");
-                GamePad.SetVibration(PlayerIndex.One, 50, 50);
-                yield return new WaitForSeconds(0.5f);
+                if (aura.isloaded() == true)
+                {
+                    yield return new WaitForSeconds(0.5f);
+                    float Angulo = Mathf.Atan2(Animador.GetFloat("MovimientoY"), Animador.GetFloat("MovimientoX")) * Mathf.Rad2Deg;
+                    GameObject Slashe = Instantiate(Proyectil, transform.position, Quaternion.AngleAxis(Angulo, Vector3.forward));
+                    Slash slash = Slashe.GetComponent<Slash>();
+                    slash.mov.x = Animador.GetFloat("MovimientoX");
+                    slash.mov.y = Animador.GetFloat("MovimientoY");
+                    GamePad.SetVibration(PlayerIndex.One, 50, 50);
+                    yield return new WaitForSeconds(0.5f);
+                }
+                aura.AuraStop();
                 GamePad.SetVibration(PlayerIndex.One, 0, 0);
-                Cargado = false;
+                
                 NoMove = false;
 
             }
