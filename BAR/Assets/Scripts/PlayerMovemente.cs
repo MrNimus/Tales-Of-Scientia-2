@@ -17,6 +17,7 @@ public class PlayerMovemente : MonoBehaviour
     public float A, D;
     public GameObject Proyectil;
     bool NoMove;
+    bool Cargado;
     
     
     void Awake()
@@ -44,6 +45,7 @@ public class PlayerMovemente : MonoBehaviour
         Ataque_Principal();
         GuardarArma();
         Ataque_Cargado();
+        NoMover();
     }
     void FixedUpdate()
     {
@@ -52,20 +54,24 @@ public class PlayerMovemente : MonoBehaviour
     void Movimiento_Jugador()
     {
         Movimiento = new Vector2(
-                   Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+                   Mathf.RoundToInt(Input.GetAxisRaw("Horizontal")), Mathf.RoundToInt(Input.GetAxisRaw("Vertical")));
 
     }
     void Animacion_Movimiento()
     {
-        if (Movimiento != Vector2.zero)
+        if (NoMove == false)
         {
-            Animador.SetFloat("MovimientoX", Movimiento.x);
-            Animador.SetFloat("MovimientoY", Movimiento.y);
-            Animador.SetBool("Walking", true);
-        }
-        else
-        {
-            Animador.SetBool("Walking", false);
+            
+            if (Movimiento != Vector2.zero)
+            {
+                Animador.SetFloat("MovimientoX", Movimiento.x);
+                Animador.SetFloat("MovimientoY", Movimiento.y);
+                Animador.SetBool("Walking", true);
+            }
+            else
+            {
+                Animador.SetBool("Walking", false);
+            }
         }
     }
     void Ataque_Principal()
@@ -129,20 +135,33 @@ public class PlayerMovemente : MonoBehaviour
     {
         AnimatorStateInfo animatorStateInfo = Animador.GetCurrentAnimatorStateInfo(0);
         bool loading = animatorStateInfo.IsName("Player Attack");
-        if (Input.GetButtonDown("ChargeAttack"))
+        StartCoroutine(Hola());
+        IEnumerator Hola()
         {
-            Animador.SetTrigger("Loading");
-            
-        }
-        else if(Input.GetButtonUp("ChargeAttack"))
-        {
-            Animador.SetTrigger("AtaqueCargado");
-            float Angulo = Mathf.Atan2(Animador.GetFloat("MovimientoY"), Animador.GetFloat("MovimientoX")) * Mathf.Rad2Deg;
-            GameObject Slashe = Instantiate(Proyectil, transform.position, Quaternion.AngleAxis(Angulo, Vector3.forward));
-            Slash slash = Slashe.GetComponent<Slash>();
-            slash.mov.x = Animador.GetFloat("MovimientoX");
-            slash.mov.y = Animador.GetFloat("MovimientoY");
-            Animador.SetTrigger("Ataque");
+            if (Input.GetButton("ChargeAttack") && Input.GetButton("Fire2"))
+            {
+                Animador.SetTrigger("Loading");
+                NoMove = true;
+                Cargado = true;
+                Animador.SetBool("Walking", false);
+
+            }
+            else if (Cargado == true && Input.GetButtonUp("ChargeAttack") && !(Input.GetButtonDown("Fire2")))
+            {
+                Animador.SetTrigger("AtaqueCargado");
+                yield return new WaitForSeconds(0.5f);
+                float Angulo = Mathf.Atan2(Animador.GetFloat("MovimientoY"), Animador.GetFloat("MovimientoX")) * Mathf.Rad2Deg;
+                GameObject Slashe = Instantiate(Proyectil, transform.position, Quaternion.AngleAxis(Angulo, Vector3.forward));
+                Slash slash = Slashe.GetComponent<Slash>();
+                slash.mov.x = Animador.GetFloat("MovimientoX");
+                slash.mov.y = Animador.GetFloat("MovimientoY");
+                GamePad.SetVibration(PlayerIndex.One, 50, 50);
+                yield return new WaitForSeconds(0.5f);
+                GamePad.SetVibration(PlayerIndex.One, 0, 0);
+                Cargado = false;
+                NoMove = false;
+
+            }
         }
     }
 }

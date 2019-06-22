@@ -28,16 +28,19 @@ public class Warp : MonoBehaviour
     }
     IEnumerator OnTriggerEnter2D (Collider2D other)
     {
-        FadeIn();
-        other.GetComponent<Animator>().enabled = false;
-        other.GetComponent<PlayerMovemente>().enabled = false;
-        yield return new WaitForSeconds(fadetime);
+        if (other.tag == "Player")
+        {
+            FadeIn();
+            other.GetComponent<Animator>().enabled = false;
+            other.GetComponent<PlayerMovemente>().enabled = false;
+            yield return new WaitForSeconds(fadetime);
             other.transform.position = Objetivo.transform.GetChild(0).transform.position;
             Camera.main.GetComponent<MainCámera>().SetBound(Mapa);
-        FadeOut();
-        other.GetComponent<Animator>().enabled = true;
-        other.GetComponent<PlayerMovemente>().enabled = true;
-        StartCoroutine(Area.GetComponent<Area>().ShowArea(Objetivo.name));
+            FadeOut();
+            other.GetComponent<Animator>().enabled = true;
+            other.GetComponent<PlayerMovemente>().enabled = true;
+            StartCoroutine(Area.GetComponent<Area>().ShowArea(Objetivo.name));
+        }
 
     }
 

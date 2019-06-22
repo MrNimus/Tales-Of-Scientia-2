@@ -14,9 +14,10 @@ GameObject:
   - component: {fileID: 2188460772115639079}
   - component: {fileID: 7393599346989208278}
   - component: {fileID: 695439586375396830}
+  - component: {fileID: 5095546646001226536}
   m_Layer: 0
   m_Name: Slash
-  m_TagString: Untagged
+  m_TagString: Attack
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -176,3 +177,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd1a6c28be137564ba7e659f53607d41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AntesDestruir: 0.5
+  mov: {x: 0, y: 0}
+  speed: 20
+--- !u!95 &5095546646001226536
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8276768309582252407}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

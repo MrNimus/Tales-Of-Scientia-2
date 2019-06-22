@@ -9,6 +9,7 @@ TagManager:
   - Area
   - Attack
   - Object
+  - Bounds
   layers:
   - Default
   - TransparentFX
