@@ -138,19 +138,21 @@ public class PlayerMovemente : MonoBehaviour
         StartCoroutine(Hola());
         IEnumerator Hola()
         {
-            if (Input.GetButton("ChargeAttack") && Input.GetButton("Fire2"))
+            if (Input.GetButton("ChargeAttack") && Input.GetButtonDown("Fire2"))
             {
                 Animador.SetTrigger("Loading");
                 aura.StartAura();
                 NoMove = true;  
                 Animador.SetBool("Walking", false);
+               
 
             }
             else if (Input.GetButtonUp("ChargeAttack") && !(Input.GetButtonDown("Fire2")))
             {
-                Animador.SetTrigger("AtaqueCargado");
+                
                 if (aura.isloaded() == true)
                 {
+                    Animador.SetTrigger("AtaqueCargado");
                     yield return new WaitForSeconds(0.5f);
                     float Angulo = Mathf.Atan2(Animador.GetFloat("MovimientoY"), Animador.GetFloat("MovimientoX")) * Mathf.Rad2Deg;
                     GameObject Slashe = Instantiate(Proyectil, transform.position, Quaternion.AngleAxis(Angulo, Vector3.forward));
@@ -159,9 +161,12 @@ public class PlayerMovemente : MonoBehaviour
                     slash.mov.y = Animador.GetFloat("MovimientoY");
                     GamePad.SetVibration(PlayerIndex.One, 50, 50);
                     yield return new WaitForSeconds(0.5f);
+                    GamePad.SetVibration(PlayerIndex.One, 0, 0);
+                    yield return new WaitForSeconds(0.2f);
+                    aura.AuraStop();
                 }
                 aura.AuraStop();
-                GamePad.SetVibration(PlayerIndex.One, 0, 0);
+                
                 
                 NoMove = false;
 

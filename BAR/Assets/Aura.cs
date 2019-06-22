@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using XInputDotNetPure;
 
 public class Aura : MonoBehaviour
 {
@@ -35,6 +36,15 @@ public class Aura : MonoBehaviour
     }
     void Update()
     {
-        
+        if (isloaded())
+        {
+            GamePad.SetVibration(PlayerIndex.One, 1f, 1f);
+        }
+        else
+        {
+            
+                GamePad.SetVibration(PlayerIndex.One, 0, 0);
+            
+        }
     }
 }
