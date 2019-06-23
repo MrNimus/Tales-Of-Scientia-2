@@ -165,6 +165,11 @@ public class PlayerMovemente : MonoBehaviour
                     yield return new WaitForSeconds(0.2f);
                     aura.AuraStop();
                 }
+                else
+                {
+                    Animador.SetTrigger("Failed");
+                    aura.AuraStop();
+                }
                 aura.AuraStop();
                 
                 

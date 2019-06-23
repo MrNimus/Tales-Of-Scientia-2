@@ -39,7 +39,7 @@ public class Warp : MonoBehaviour
             FadeOut();
             other.GetComponent<Animator>().enabled = true;
             other.GetComponent<PlayerMovemente>().enabled = true;
-            StartCoroutine(Area.GetComponent<Area>().ShowArea(Objetivo.name));
+            StartCoroutine(Area.GetComponent<Area>().ShowArea(Objetivo.name)); 
         }
 
     }

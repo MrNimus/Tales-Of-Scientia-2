@@ -63,6 +63,7 @@
     <Compile Include="Assets\Scripts\Area.cs" />
     <Compile Include="Assets\Scripts\Aura.cs" />
     <Compile Include="Assets\Scripts\Breakable.cs" />
+    <Compile Include="Assets\Scripts\Enemigo.cs" />
     <Compile Include="Assets\Scripts\MainCámera.cs" />
     <Compile Include="Assets\Scripts\PlayerMovemente.cs" />
     <Compile Include="Assets\Scripts\Profundidad.cs" />
