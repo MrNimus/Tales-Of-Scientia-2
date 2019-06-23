@@ -60,14 +60,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Aura.cs" />
     <Compile Include="Assets\Scripts\Area.cs" />
+    <Compile Include="Assets\Scripts\Aura.cs" />
     <Compile Include="Assets\Scripts\Breakable.cs" />
     <Compile Include="Assets\Scripts\MainCámera.cs" />
     <Compile Include="Assets\Scripts\PlayerMovemente.cs" />
     <Compile Include="Assets\Scripts\Profundidad.cs" />
+    <Compile Include="Assets\Scripts\Slash.cs" />
     <Compile Include="Assets\Scripts\Warp.cs" />
-    <Compile Include="Assets\Slash.cs" />
     <Compile Include="Assets\Tiled2Unity\Scripts\Runtime\CircleObject.cs" />
     <Compile Include="Assets\Tiled2Unity\Scripts\Runtime\GameObjectExtensions.cs" />
     <Compile Include="Assets\Tiled2Unity\Scripts\Runtime\GPUInstancing.cs" />
